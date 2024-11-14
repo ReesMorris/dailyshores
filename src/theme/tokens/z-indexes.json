@@ -1,0 +1,19 @@
+{
+  "hide": { "value": "-1" },
+  "auto": { "value": "auto" },
+  "base": { "value": "0" },
+  "above": { "value": "1" },
+  "docked": { "value": "10" },
+  "dropdown": { "value": "1000" },
+  "sticky": { "value": "1100" },
+  "banner": { "value": "1200" },
+  "overlay": { "value": "1300" },
+  "modal": { "value": "1400" },
+  "popover": { "value": "1500" },
+  "skipLink": { "value": "1600" },
+  "toast": { "value": "1700" },
+  "tooltip": { "value": "1800" },
+  "loadingBar": { "value": "1900" },
+  "loadingScreen": { "value": "2000" },
+  "confetti": { "value": "2100" }
+}

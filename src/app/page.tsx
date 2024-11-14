@@ -1,9 +1,11 @@
-import { css } from '../../styled-system/css';
+import { Header } from '@/components/global/header';
+import { Wrapper } from '@/components/global/wrapper';
 
 export default function Home() {
   return (
-    <div className={css({ fontSize: '2xl', fontWeight: 'bold' })}>
-      Hello 🐼!
-    </div>
+    <>
+      <Header />
+      <Wrapper>hello</Wrapper>
+    </>
   );
 }

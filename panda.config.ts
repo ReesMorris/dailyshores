@@ -1,3 +1,5 @@
+import { globalCss } from '@/theme/global.theme';
+import { theme } from '@/theme/tokens';
 import { defineConfig } from '@pandacss/dev';
 
 export default defineConfig({
@@ -12,9 +14,11 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: theme
   },
 
+  globalCss,
+
   // The output directory for your css system
-  outdir: 'styled-system',
+  outdir: 'styled-system'
 });
