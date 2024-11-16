@@ -1,3 +1,10 @@
 {
-  "header": { "value": "3.5rem" }
+  "header": { "value": "3.5rem" },
+  "ui": {
+    "xs": { "value": "{sizes.8}" },
+    "sm": { "value": "{sizes.9}" },
+    "md": { "value": "{sizes.10}" },
+    "lg": { "value": "{sizes.11}" },
+    "xl": { "value": "{sizes.12}" }
+  }
 }
