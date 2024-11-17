@@ -7,7 +7,8 @@ export const styles = {
     alignItems: 'center',
     gap: '1.5',
     fontSize: 'xs',
-    color: 'gray.400'
+    color: 'gray.400',
+    blockSize: '3'
   }),
   icon: css({
     inlineSize: '2',
