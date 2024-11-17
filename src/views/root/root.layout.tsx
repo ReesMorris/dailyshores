@@ -6,6 +6,7 @@ import { Plausible } from '@/components/global/plausible';
 import { Header } from '@/components/global/header';
 import { Wrapper } from '@/components/global/wrapper';
 import '@/theme/globals.css';
+import { TimeProvider } from '@/providers/time';
 
 export const metadata: Metadata = {
   title: 'DailyShores',
@@ -21,7 +22,9 @@ export const Layout: LayoutComponent = ({ children }) => {
       </head>
       <body>
         <Header />
-        <Wrapper>{children}</Wrapper>
+        <Wrapper>
+          <TimeProvider>{children}</TimeProvider>
+        </Wrapper>
       </body>
     </html>
   );

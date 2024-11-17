@@ -5,7 +5,7 @@ export const sections = (): Section[] => {
     {
       id: 'dailies',
       title: 'Dailies',
-      refresh: new Date().setUTCHours(24, 0, 0, 0),
+      refresh: new Date(new Date().setUTCHours(24, 0, 0, 0)),
       profit: undefined,
       tasks: [
         {
@@ -28,11 +28,8 @@ export const sections = (): Section[] => {
       // For Friday:    (12 - getUTCDay()) % 7
       // For Saturday:  (13 - getUTCDay()) % 7
       // For Sunday:    (14 - getUTCDay()) % 7
-      refresh: new Date().setUTCHours(
-        24 * ((8 - new Date().getUTCDay()) % 7),
-        0,
-        0,
-        0
+      refresh: new Date(
+        new Date().setUTCHours(24 * ((8 - new Date().getUTCDay()) % 7), 0, 0, 0)
       ),
       profit: undefined,
       tasks: []
@@ -42,10 +39,12 @@ export const sections = (): Section[] => {
       id: 'monthlies',
       title: 'Monthlies',
       refresh: new Date(
-        new Date().getUTCFullYear(),
-        new Date().getUTCMonth() + 1,
-        1
-      ).getTime(),
+        new Date(
+          new Date().getUTCFullYear(),
+          new Date().getUTCMonth() + 1,
+          1
+        ).getTime()
+      ),
       profit: undefined,
       tasks: []
     }

@@ -10,7 +10,7 @@ export const Page: React.FC = () => {
           key={section.id}
           id={section.id}
           title={section.title}
-          timeLeft={new Date(section.refresh).toISOString()}
+          endTime={section.refresh}
           profit={section.profit}
         >
           {section.tasks.map(task => (

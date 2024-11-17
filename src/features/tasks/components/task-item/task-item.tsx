@@ -46,7 +46,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({
           onToggleCompleted={() => setCompleted(!completed)}
           onToggleDetails={() => setShowDetails(!showDetails)}
         />
-        {showDetails && (
+        {showDetails && descriptionText && (
           <Description
             description={descriptionText}
             descriptionId={descriptionId}

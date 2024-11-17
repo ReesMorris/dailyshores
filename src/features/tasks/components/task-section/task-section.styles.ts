@@ -9,8 +9,7 @@ export const styles = {
   header: css({
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBlockEnd: '4'
+    justifyContent: 'space-between'
   }),
   left: css({
     display: 'flex',
@@ -21,15 +20,8 @@ export const styles = {
     fontSize: '2xl',
     fontWeight: 'medium'
   }),
-  profit: css({
-    color: 'yellow.400',
-    fontWeight: 'medium'
-  }),
-  controls: css({
-    display: 'flex',
-    gap: '2'
-  }),
   list: css({
+    marginBlockStart: '4',
     display: 'flex',
     flexDirection: 'column',
     gap: '0.5'

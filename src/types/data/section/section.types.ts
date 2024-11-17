@@ -3,7 +3,7 @@ import type { SectionTask } from './section-task.types';
 export interface Section {
   id: string;
   title: string;
-  refresh: number;
+  refresh: Date;
   profit?: number;
   tasks: SectionTask[];
 }

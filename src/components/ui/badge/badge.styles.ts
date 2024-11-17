@@ -36,7 +36,7 @@ export const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    inlineSize: '4',
-    blockSize: '4'
+    inlineSize: '3',
+    blockSize: '3'
   })
 };

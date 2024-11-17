@@ -1,8 +1,7 @@
-import type { TaskItemProps } from '../task-item';
 import { styles } from './description.styles';
 
 interface DescriptionProps {
-  description: TaskItemProps['description'];
+  description: string;
   descriptionId: string;
   labelledBy: string;
 }
