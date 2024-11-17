@@ -11,7 +11,6 @@ export const styles = {
     borderStyle: 'solid',
     borderColor: 'gray.600',
     backgroundColor: 'slate.700/50',
-    transition: 'colors',
     borderRadius: 'sm',
 
     _checked: {

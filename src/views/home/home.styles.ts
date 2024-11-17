@@ -1,7 +1,7 @@
 import { css } from '@/styled-system/css';
 
 export const styles = {
-  wrapper: css({
+  container: css({
     display: 'flex',
     flexDirection: 'column',
     gap: '12'

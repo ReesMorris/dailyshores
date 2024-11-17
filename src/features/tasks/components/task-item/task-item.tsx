@@ -7,14 +7,16 @@ import { Description } from './description';
 
 export interface TaskItemProps {
   title: string;
-  description?: string;
   reward?: string;
+  descriptionText?: string;
+  descriptionLink?: string;
 }
 
 export const TaskItem: React.FC<TaskItemProps> = ({
   title,
-  description,
-  reward
+  reward,
+  descriptionText,
+  descriptionLink
 }) => {
   const id = useId();
   const [completed, setCompleted] = useState(false);
@@ -39,13 +41,14 @@ export const TaskItem: React.FC<TaskItemProps> = ({
           reward={reward}
           isCompleted={completed}
           isExpanded={showDetails}
-          hasDescription={Boolean(description)}
+          hasDescription={Boolean(descriptionText)}
+          externalLink={descriptionLink}
           onToggleCompleted={() => setCompleted(!completed)}
           onToggleDetails={() => setShowDetails(!showDetails)}
         />
         {showDetails && (
           <Description
-            description={description}
+            description={descriptionText}
             descriptionId={descriptionId}
             labelledBy={`${titleId} ${descriptionId}`}
           />

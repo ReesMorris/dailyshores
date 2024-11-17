@@ -6,6 +6,8 @@ export const styles = {
     display: 'flex'
   }),
   item: css({
+    display: 'flex',
+    alignItems: 'center',
     paddingInline: '4',
     paddingBlock: '3',
     cursor: 'pointer',
@@ -36,12 +38,16 @@ export const styles = {
   }),
   rewardSummary: css({
     fontSize: 'sm',
-    color: 'gray.400'
+    color: 'gray.400',
+
+    '&[data-completed]': {
+      color: 'gray.500'
+    }
   }),
   right: css({
     flexShrink: 0
   }),
-  infoIcon: css({
+  icon: css({
     inlineSize: '4',
     blockSize: '4',
     color: 'gray.400'

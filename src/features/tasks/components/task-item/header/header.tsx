@@ -1,4 +1,5 @@
-import { InfoIcon } from 'lucide-react';
+import { ExternalLinkIcon, InfoIcon } from 'lucide-react';
+import { Link } from '@/components/common/link';
 import { cn } from '@/utils/cn';
 import type { TaskItemProps } from '../task-item';
 import { Checkbox } from './checkbox';
@@ -13,6 +14,7 @@ interface HeaderProps {
   isCompleted: boolean;
   isExpanded: boolean;
   hasDescription: boolean;
+  externalLink?: string;
   onToggleCompleted: () => void;
   onToggleDetails: () => void;
 }
@@ -26,6 +28,7 @@ export const Header: React.FC<HeaderProps> = ({
   isCompleted,
   isExpanded,
   hasDescription,
+  externalLink,
   onToggleCompleted,
   onToggleDetails
 }) => {
@@ -57,6 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
             role='status'
             aria-label={`Reward: ${reward}`}
             className={styles.rewardSummary}
+            data-completed={isCompleted || undefined}
           >
             {reward}
           </div>
@@ -74,11 +78,21 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={onToggleDetails}
         >
           <InfoIcon
-            className={styles.infoIcon}
+            className={styles.icon}
             aria-hidden='true'
             role='presentation'
           />
         </button>
+      )}
+
+      {externalLink && (
+        <Link href={externalLink} className={cn(styles.right, styles.item)}>
+          <ExternalLinkIcon
+            className={styles.icon}
+            aria-hidden='true'
+            role='presentation'
+          />
+        </Link>
       )}
     </div>
   );

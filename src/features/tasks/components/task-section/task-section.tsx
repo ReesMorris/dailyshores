@@ -7,7 +7,7 @@ interface TaskSectionProps {
   id: string;
   title: string;
   timeLeft?: string;
-  profit?: string;
+  profit?: string | number;
   showControls?: boolean;
   children: React.ReactNode;
 }
@@ -20,11 +20,13 @@ export const TaskSection: React.FC<TaskSectionProps> = ({
   showControls = true,
   children
 }) => {
+  const titleId = `task-section-${id}-title`;
+
   return (
-    <section aria-labelledby={id} className={styles.container}>
+    <section id={id} aria-labelledby={titleId} className={styles.container}>
       <div className={styles.header}>
         <div className={styles.left}>
-          <h2 id={id} className={styles.title}>
+          <h2 id={titleId} className={styles.title}>
             {title}
           </h2>
           {timeLeft && (

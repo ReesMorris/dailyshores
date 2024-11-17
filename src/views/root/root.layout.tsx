@@ -3,6 +3,8 @@
 import type { Metadata } from 'next';
 import type { LayoutComponent } from '@/types';
 import { Plausible } from '@/components/global/plausible';
+import { Header } from '@/components/global/header';
+import { Wrapper } from '@/components/global/wrapper';
 import '@/theme/globals.css';
 
 export const metadata: Metadata = {
@@ -17,7 +19,10 @@ export const Layout: LayoutComponent = ({ children }) => {
       <head>
         <Plausible />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        <Wrapper>{children}</Wrapper>
+      </body>
     </html>
   );
 };
