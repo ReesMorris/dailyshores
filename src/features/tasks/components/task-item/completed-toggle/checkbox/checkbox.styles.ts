@@ -2,6 +2,7 @@ import { css } from '@/styled-system/css';
 
 export const styles = {
   checkbox: css({
+    flexShrink: '0',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

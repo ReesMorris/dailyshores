@@ -5,14 +5,14 @@ export const sections = (): Section[] => {
     {
       id: 'dailies',
       title: 'Dailies',
-      refresh: new Date(new Date().setUTCHours(24, 0, 0, 0)),
+      endTime: new Date(new Date().setUTCHours(24, 0, 0, 0)),
       profit: undefined,
       tasks: [
         {
           id: 'daily-ventures',
           title: 'Ventures',
           reward: 'Passive XP',
-          descriptionText: undefined,
+          descriptionText: 'Complete ventures to earn passive XP.',
           descriptionLink: 'https://brightershoreswiki.org/w/Ventures'
         }
       ]
@@ -28,7 +28,7 @@ export const sections = (): Section[] => {
       // For Friday:    (12 - getUTCDay()) % 7
       // For Saturday:  (13 - getUTCDay()) % 7
       // For Sunday:    (14 - getUTCDay()) % 7
-      refresh: new Date(
+      endTime: new Date(
         new Date().setUTCHours(24 * ((8 - new Date().getUTCDay()) % 7), 0, 0, 0)
       ),
       profit: undefined,
@@ -38,7 +38,7 @@ export const sections = (): Section[] => {
     {
       id: 'monthlies',
       title: 'Monthlies',
-      refresh: new Date(
+      endTime: new Date(
         new Date(
           new Date().getUTCFullYear(),
           new Date().getUTCMonth() + 1,

@@ -6,21 +6,9 @@ export const Page: React.FC = () => {
   return (
     <div className={styles.container}>
       {sections().map(section => (
-        <Tasks.Section
-          key={section.id}
-          id={section.id}
-          title={section.title}
-          endTime={section.refresh}
-          profit={section.profit}
-        >
+        <Tasks.Section key={section.id} section={section}>
           {section.tasks.map(task => (
-            <Tasks.Item
-              key={task.id}
-              title={task.title}
-              reward={task.reward}
-              descriptionText={task.descriptionText}
-              descriptionLink={task.descriptionLink}
-            />
+            <Tasks.Item key={task.id} task={task} />
           ))}
         </Tasks.Section>
       ))}

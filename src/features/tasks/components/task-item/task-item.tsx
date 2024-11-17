@@ -1,59 +1,38 @@
 'use client';
 
-import { useId, useState } from 'react';
+import type { SectionTask } from '@/types';
 import { styles } from './task-item.styles';
-import { Header } from './header';
 import { Description } from './description';
+import { CompletedToggle } from './completed-toggle';
+import { DescriptionToggle } from './description-toggle';
+import { ExternalLink } from './external-link';
+import { TaskItemProvider } from './provider';
 
 export interface TaskItemProps {
-  title: string;
-  reward?: string;
-  descriptionText?: string;
-  descriptionLink?: string;
+  task: SectionTask;
 }
 
-export const TaskItem: React.FC<TaskItemProps> = ({
-  title,
-  reward,
-  descriptionText,
-  descriptionLink
-}) => {
-  const id = useId();
-  const [completed, setCompleted] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
-
-  const titleId = `${id}-title`;
-  const descriptionId = `${id}-description`;
-  const detailsButtonId = `${id}-details-button`;
-
+export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   return (
-    <li>
-      <article
-        className={styles.container}
-        aria-labelledby={titleId}
-        data-completed={completed || undefined}
-      >
-        <Header
-          title={title}
-          titleId={titleId}
-          detailsButtonId={detailsButtonId}
-          descriptionId={descriptionId}
-          reward={reward}
-          isCompleted={completed}
-          isExpanded={showDetails}
-          hasDescription={Boolean(descriptionText)}
-          externalLink={descriptionLink}
-          onToggleCompleted={() => setCompleted(!completed)}
-          onToggleDetails={() => setShowDetails(!showDetails)}
-        />
-        {showDetails && descriptionText && (
-          <Description
-            description={descriptionText}
-            descriptionId={descriptionId}
-            labelledBy={`${titleId} ${descriptionId}`}
-          />
-        )}
-      </article>
-    </li>
+    <TaskItemProvider task={task}>
+      {({ ids, isCompleted }) => {
+        return (
+          <li>
+            <article
+              className={styles.container}
+              aria-labelledby={ids.titleId}
+              data-completed={isCompleted || undefined}
+            >
+              <div className={styles.row}>
+                <CompletedToggle />
+                <DescriptionToggle />
+                <ExternalLink />
+              </div>
+              <Description />
+            </article>
+          </li>
+        );
+      }}
+    </TaskItemProvider>
   );
 };

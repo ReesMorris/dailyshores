@@ -1,23 +1,23 @@
+'use client';
+
+import { useTaskItem } from '../provider';
 import { styles } from './description.styles';
 
-interface DescriptionProps {
-  description: string;
-  descriptionId: string;
-  labelledBy: string;
-}
+export const Description: React.FC = () => {
+  const { ids, task, showDetails } = useTaskItem();
 
-export const Description: React.FC<DescriptionProps> = ({
-  description,
-  descriptionId,
-  labelledBy
-}) => {
+  // If there is no description text or the details are hidden, do not render
+  if (!task.descriptionText || !showDetails) {
+    return null;
+  }
+
   return (
     <section
-      id={descriptionId}
+      id={ids.descriptionId}
       className={styles.description}
-      aria-labelledby={labelledBy}
+      aria-labelledby={ids.titleId}
     >
-      {description}
+      {task.descriptionText}
     </section>
   );
 };
