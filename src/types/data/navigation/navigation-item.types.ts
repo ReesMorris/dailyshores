@@ -1,6 +1,9 @@
-export interface NavigationItem {
+export interface NavigationItemData {
   id: string;
   title: string;
   url: string;
-  icon?: React.ReactNode;
+  icon?: {
+    path: string;
+    viewBox: string;
+  };
 }

@@ -3,10 +3,14 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { ExternalLinkIcon } from 'lucide-react';
 import { Link } from '@/components/common/link';
+import { Svg } from '../../svg';
 import { styles } from './dropdown-item.styles';
 
 interface DropdownItemProps {
-  icon?: React.ReactNode;
+  icon?: {
+    path: string;
+    viewBox: string;
+  };
   href?: string;
   external?: boolean;
   children: React.ReactNode;
@@ -42,7 +46,13 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
   return (
     <DropdownMenu.Item asChild className={styles.item}>
       <Wrapper className={styles.wrapper}>
-        {icon && <div className={styles.icon}>{icon}</div>}
+        {icon && (
+          <Svg
+            path={icon.path}
+            viewBox={icon.viewBox}
+            className={styles.icon}
+          />
+        )}
         <span className={styles.text}>{children}</span>
         {external && (
           <span className={styles.external}>

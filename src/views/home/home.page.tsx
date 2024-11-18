@@ -5,7 +5,7 @@ import { styles } from './home.styles';
 export const Page: React.FC = () => {
   return (
     <div className={styles.container}>
-      {sections().map(section => (
+      {sections.map(section => (
         <Tasks.Section key={section.id} section={section}>
           {section.tasks.length === 0 && <Tasks.Empty />}
           {section.tasks.map(task => (
