@@ -27,7 +27,7 @@ export const TaskItemProvider: React.FC<TaskItemProviderProps> = ({
   task,
   children
 }) => {
-  const ids = useIds();
+  const ids = useIds(task);
   const [isCompleted, setIsCompleted] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 

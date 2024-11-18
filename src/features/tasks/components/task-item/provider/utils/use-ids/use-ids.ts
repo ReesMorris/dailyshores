@@ -1,6 +1,4 @@
-'use client';
-
-import { useId } from 'react';
+import type { SectionTask } from '@/types';
 
 export interface Ids {
   id: string;
@@ -13,8 +11,8 @@ export interface Ids {
  * Hook that generates unique IDs for the task item component.
  * @returns An object containing the generated IDs.
  */
-export const useIds = (): Ids => {
-  const id = useId();
+export const useIds = (task: SectionTask): Ids => {
+  const { id } = task;
 
   return {
     id,
