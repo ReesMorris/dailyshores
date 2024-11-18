@@ -20,7 +20,7 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.47.1",
+    "@pandacss/dev": "^0.48.0",
     "@pandacss/eslint-plugin": "^0.2.0",
     "@types/node": "^22",
     "@types/react": "^18",
