@@ -6,7 +6,7 @@ import { useTaskItem } from '../provider';
 import { styles } from './external-link.styles';
 
 export const ExternalLink: React.FC = () => {
-  const { task } = useTaskItem();
+  const { task, isCompleted } = useTaskItem();
 
   // If there is no description link, don't render this section
   if (!task.descriptionLink) {
@@ -14,7 +14,11 @@ export const ExternalLink: React.FC = () => {
   }
 
   return (
-    <Link href={task.descriptionLink} className={styles.container}>
+    <Link
+      href={task.descriptionLink}
+      className={styles.container}
+      data-completed={isCompleted || undefined}
+    >
       <ExternalLinkIcon
         className={styles.icon}
         aria-hidden='true'

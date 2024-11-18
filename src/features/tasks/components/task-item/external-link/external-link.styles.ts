@@ -12,6 +12,12 @@ export const styles = {
 
     _hover: {
       backgroundColor: 'slate.800/80'
+    },
+
+    '&[data-completed]': {
+      _hover: {
+        backgroundColor: 'slate.800/10'
+      }
     }
   }),
   icon: css({

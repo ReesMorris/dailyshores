@@ -20,6 +20,7 @@ export const CompletedToggle: React.FC = () => {
       className={styles.container}
       aria-pressed={isCompleted}
       aria-label={`Mark ${task.title} as ${isCompleted ? 'incomplete' : 'complete'}`}
+      data-completed={isCompleted || undefined}
       onClick={handleClick}
     >
       <div className={styles.leftInner}>

@@ -3,7 +3,7 @@ import { useTaskItem } from '../provider';
 import { styles } from './description-toggle.styles';
 
 export const DescriptionToggle: React.FC = () => {
-  const { ids, task, showDetails, setShowDetails } = useTaskItem();
+  const { ids, task, isCompleted, showDetails, setShowDetails } = useTaskItem();
 
   /**
    * Toggles the visibility of the task description
@@ -25,6 +25,7 @@ export const DescriptionToggle: React.FC = () => {
       aria-expanded={showDetails}
       aria-controls={ids.descriptionId}
       aria-label={`${showDetails ? 'Hide' : 'Show'} details for ${task.title}`}
+      data-completed={isCompleted || undefined}
       onClick={handleClick}
     >
       <InfoIcon
