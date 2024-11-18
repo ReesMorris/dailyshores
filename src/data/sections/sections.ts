@@ -12,7 +12,7 @@ export const sections = (): Section[] => {
           id: 'daily-ventures',
           title: 'Ventures',
           reward: 'Passive XP',
-          descriptionText: 'Complete ventures to earn passive XP.',
+          descriptionText: undefined,
           descriptionLink: 'https://brightershoreswiki.org/w/Ventures'
         }
       ]
@@ -21,15 +21,13 @@ export const sections = (): Section[] => {
     {
       id: 'weeklies',
       title: 'Weeklies',
-      // For Monday:    (8 - getUTCDay()) % 7
-      // For Tuesday:   (9 - getUTCDay()) % 7
-      // For Wednesday: (10 - getUTCDay()) % 7
-      // For Thursday:  (11 - getUTCDay()) % 7
-      // For Friday:    (12 - getUTCDay()) % 7
-      // For Saturday:  (13 - getUTCDay()) % 7
-      // For Sunday:    (14 - getUTCDay()) % 7
       endTime: new Date(
-        new Date().setUTCHours(24 * ((8 - new Date().getUTCDay()) % 7), 0, 0, 0)
+        new Date().setUTCHours(
+          24 * ((7 - new Date().getUTCDay() + 1) % 7 || 7),
+          0,
+          0,
+          0
+        )
       ),
       profit: undefined,
       tasks: []

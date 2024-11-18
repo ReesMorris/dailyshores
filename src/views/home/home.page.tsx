@@ -7,6 +7,7 @@ export const Page: React.FC = () => {
     <div className={styles.container}>
       {sections().map(section => (
         <Tasks.Section key={section.id} section={section}>
+          {section.tasks.length === 0 && <Tasks.Empty />}
           {section.tasks.map(task => (
             <Tasks.Item key={task.id} task={task} />
           ))}

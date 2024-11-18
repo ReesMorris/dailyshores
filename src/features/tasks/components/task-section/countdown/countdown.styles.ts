@@ -2,7 +2,6 @@ import { css } from '@/styled-system/css';
 
 export const styles = {
   container: css({
-    marginBlockStart: '-1',
     display: 'flex',
     alignItems: 'center',
     gap: '1.5',
