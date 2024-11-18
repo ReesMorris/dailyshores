@@ -1,6 +1,6 @@
 'use client';
 
-import { useTime } from '@/providers/time';
+import { useTime } from '@/providers/time-provider';
 import { usePrefersReducedMotion } from '../use-prefers-reduced-motion';
 
 /**

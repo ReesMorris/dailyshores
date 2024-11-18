@@ -15,5 +15,14 @@ export const globalCss = defineGlobalStyles({
 
   '*[data-radix-popper-content-wrapper]': {
     zIndex: 'popover !important'
+  },
+
+  '& *:focus': {
+    outline: 'none'
+  },
+  '& .is-tabbing': {
+    '& *:focus': {
+      boxShadow: 'inset 0 0 0 1px black, inset 0 0 3px 1px {colors.blue.500}'
+    }
   }
 });
