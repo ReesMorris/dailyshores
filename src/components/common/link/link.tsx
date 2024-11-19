@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 
-interface LinkProps {
+interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   className?: string;
   children?: React.ReactNode;

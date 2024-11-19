@@ -12,8 +12,11 @@ export const sections = (): Section[] => [
         id: 'daily-ventures',
         title: 'Ventures',
         reward: 'Passive XP',
-        descriptionText: undefined,
-        descriptionLink: 'https://brightershoreswiki.org/w/Ventures'
+        description: undefined,
+        link: {
+          text: 'Ventures Guide',
+          url: 'https://brightershoreswiki.org/w/Ventures'
+        }
       }
     ]
   },

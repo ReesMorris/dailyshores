@@ -13,7 +13,7 @@ export const DescriptionToggle: React.FC = () => {
   };
 
   // If the task has no description text, don't render the toggle
-  if (!task.descriptionText) {
+  if (!task.description) {
     return null;
   }
 

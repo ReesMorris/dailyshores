@@ -1,4 +1,5 @@
 import type { Section } from '@/types';
+import { Tasks } from '..';
 import { styles } from './task-section.styles';
 import { Countdown } from './countdown';
 import { Controls } from './controls';
@@ -8,13 +9,11 @@ import { TaskSectionProvider } from './provider';
 interface TaskSectionProps {
   section: Section;
   showControls?: boolean;
-  children: React.ReactNode;
 }
 
 export const TaskSection: React.FC<TaskSectionProps> = ({
   section,
-  showControls = false,
-  children
+  showControls = false
 }) => {
   const { id, title, endTime, profit } = section;
 
@@ -31,7 +30,16 @@ export const TaskSection: React.FC<TaskSectionProps> = ({
           {showControls && <Controls />}
         </div>
         {endTime && <Countdown endTime={endTime} />}
-        <ul className={styles.list}>{children}</ul>
+
+        {section.tasks.length > 0 ? (
+          <ul className={styles.list}>
+            {section.tasks.map(task => (
+              <Tasks.Item key={task.id} task={task} />
+            ))}
+          </ul>
+        ) : (
+          <Tasks.Empty />
+        )}
       </section>
     </TaskSectionProvider>
   );

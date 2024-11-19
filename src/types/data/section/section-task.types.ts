@@ -2,6 +2,9 @@ export interface SectionTask {
   id: string;
   title: string;
   reward: string;
-  descriptionText?: string;
-  descriptionLink?: string;
+  description?: string;
+  link?: {
+    text: string;
+    url: string;
+  };
 }

@@ -7,7 +7,7 @@ export const Description: React.FC = () => {
   const { ids, task, showDetails } = useTaskItem();
 
   // If there is no description text or the details are hidden, do not render
-  if (!task.descriptionText || !showDetails) {
+  if (!task.description || !showDetails) {
     return null;
   }
 
@@ -17,7 +17,7 @@ export const Description: React.FC = () => {
       className={styles.description}
       aria-labelledby={ids.titleId}
     >
-      {task.descriptionText}
+      {task.description}
     </section>
   );
 };
