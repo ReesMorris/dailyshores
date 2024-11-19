@@ -1,9 +1,10 @@
 'use client';
 
-import { createContext, useMemo, useState } from 'react';
+import { createContext, useCallback, useMemo, useState } from 'react';
 import type { SectionTask } from '@/types';
+import { useTaskSection } from '../../task-section/provider';
 import type { Ids } from './utils';
-import { useIds } from './utils';
+import { getIsCompleted, markCompleted, useIds } from './utils';
 
 interface TaskItemProviderProps {
   task: SectionTask;
@@ -28,8 +29,21 @@ export const TaskItemProvider: React.FC<TaskItemProviderProps> = ({
   children
 }) => {
   const ids = useIds(task);
-  const [isCompleted, setIsCompleted] = useState(false);
+  const { section } = useTaskSection();
+  const [isCompleted, setIsCompleted] = useState(getIsCompleted(section, task));
   const [showDetails, setShowDetails] = useState(false);
+
+  /**
+   * Set the completion status of the task by updating locals torage
+   * and the component state.
+   */
+  const handleSetCompleted = useCallback(
+    (isCompleted: boolean) => {
+      markCompleted(section, task, isCompleted);
+      setIsCompleted(isCompleted);
+    },
+    [section, task]
+  );
 
   // Memoize the context value to avoid unnecessary re-renders
   const contextValue = useMemo(() => {
@@ -37,11 +51,11 @@ export const TaskItemProvider: React.FC<TaskItemProviderProps> = ({
       task,
       ids,
       isCompleted,
-      setIsCompleted,
+      setIsCompleted: handleSetCompleted,
       showDetails,
       setShowDetails
     };
-  }, [task, ids, isCompleted, setIsCompleted, showDetails, setShowDetails]);
+  }, [task, ids, isCompleted, handleSetCompleted, showDetails, setShowDetails]);
 
   return (
     <TaskItemContext.Provider value={contextValue}>
