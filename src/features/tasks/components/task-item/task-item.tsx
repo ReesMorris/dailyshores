@@ -1,5 +1,6 @@
 'use client';
 
+import { useIsMounted } from '@/hooks';
 import type { SectionTask } from '@/types';
 import { styles } from './task-item.styles';
 import { Description } from './description';
@@ -13,23 +14,27 @@ export interface TaskItemProps {
 }
 
 export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+  const isMounted = useIsMounted();
+
   return (
     <TaskItemProvider task={task}>
       {({ ids, isCompleted }) => {
         return (
-          <li>
-            <article
-              className={styles.container}
-              aria-labelledby={ids.titleId}
-              data-completed={isCompleted || undefined}
-            >
-              <div className={styles.row}>
-                <CompletedToggle />
-                <DescriptionToggle />
-                <ExternalLink />
-              </div>
-              <Description />
-            </article>
+          <li className={styles.item}>
+            {isMounted && (
+              <article
+                className={styles.container}
+                aria-labelledby={ids.titleId}
+                data-completed={isCompleted || undefined}
+              >
+                <div className={styles.row}>
+                  <CompletedToggle />
+                  <DescriptionToggle />
+                  <ExternalLink />
+                </div>
+                <Description />
+              </article>
+            )}
           </li>
         );
       }}

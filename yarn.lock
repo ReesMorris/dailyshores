@@ -4289,6 +4289,7 @@ __metadata:
     react: "npm:19.0.0-rc-66855b96-20241106"
     react-dom: "npm:19.0.0-rc-66855b96-20241106"
     server-only: "npm:^0.0.1"
+    simple-icons: "npm:^13.17.0"
     typescript: "npm:^5"
     typescript-eslint: "npm:^8.14.0"
   languageName: unknown
@@ -8293,6 +8294,13 @@ __metadata:
   version: 4.1.0
   resolution: "signal-exit@npm:4.1.0"
   checksum: 10c0/41602dce540e46d599edba9d9860193398d135f7ff72cab629db5171516cfae628d21e7bfccde1bbfdf11c48726bc2a6d1a8fb8701125852fbfda7cf19c6aa83
+  languageName: node
+  linkType: hard
+
+"simple-icons@npm:^13.17.0":
+  version: 13.17.0
+  resolution: "simple-icons@npm:13.17.0"
+  checksum: 10c0/1bba21f4504769e31d3984c0b3df796ed005688b4bf6fe4ef32e6e5da083781c0abb6d458a926df25e752f7122c7c0fad9199d01b15130db8597ab0f4a35d069
   languageName: node
   linkType: hard
 

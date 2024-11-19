@@ -8,6 +8,8 @@ import { Wrapper } from '@/components/global/wrapper';
 import '@/theme/globals.css';
 import { TimeProvider } from '@/providers/time-provider';
 import { TabProvider } from '@/providers/tab-provider';
+import { Footer } from '@/components/global/footer';
+import { styles } from './root.styles';
 
 export const metadata: Metadata = {
   title: 'DailyShores',
@@ -25,7 +27,10 @@ export const Layout: LayoutComponent = ({ children }) => {
         <TabProvider>
           <TimeProvider>
             <Header />
-            <Wrapper>{children}</Wrapper>
+            <Wrapper className={styles.wrapper}>
+              <main>{children}</main>
+              <Footer />
+            </Wrapper>
           </TimeProvider>
         </TabProvider>
       </body>

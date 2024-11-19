@@ -2,6 +2,8 @@ import { defineGlobalStyles } from '@pandacss/dev';
 
 export const globalCss = defineGlobalStyles({
   body: {
+    display: 'flex',
+    flexDirection: 'column',
     fontSize: 'md',
     minBlockSize: 'screen',
     bgGradient: 'to-b',

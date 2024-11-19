@@ -1,6 +1,9 @@
 import { css } from '@/styled-system/css';
 
 export const styles = {
+  item: css({
+    minBlockSize: '12'
+  }),
   container: css({
     display: 'flex',
     flexDirection: 'column',
