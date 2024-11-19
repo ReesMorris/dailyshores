@@ -10,12 +10,17 @@ interface CountdownProps {
 
 export const Countdown: React.FC<CountdownProps> = ({ endTime }) => {
   const isMounted = useIsMounted();
-  const countdown = useCountdown(endTime);
+  const { formattedCountdown, msRemaining } = useCountdown(endTime);
   const label = `Refreshes at ${endTime.toLocaleTimeString()} on ${endTime.toLocaleDateString()}`;
 
   if (!isMounted) {
     // Empty container maintains layout during client-side hydration
     return <div className={styles.container} />;
+  }
+
+  // If the countdown has reached zero, refresh the page
+  if (msRemaining <= 0) {
+    globalThis.location.reload();
   }
 
   return (
@@ -26,7 +31,7 @@ export const Countdown: React.FC<CountdownProps> = ({ endTime }) => {
         role='presentation'
       />
       <span aria-hidden title={label}>
-        {countdown}
+        {formattedCountdown}
       </span>
     </div>
   );

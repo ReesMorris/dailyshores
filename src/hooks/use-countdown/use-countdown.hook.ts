@@ -23,7 +23,7 @@ export const useCountdown = (targetDate: Date) => {
   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
   // Format the countdown
-  const formatted = [
+  const formattedCountdown = [
     days > 0 ? `${days}d` : '',
     hours > 0 || days > 0 ? `${hours}h` : '',
     minutes > 0 || hours > 0 || days > 0 ? `${minutes}m` : '',
@@ -33,5 +33,5 @@ export const useCountdown = (targetDate: Date) => {
     .join(' ');
 
   // Return the formatted countdown
-  return formatted;
+  return { formattedCountdown, msRemaining: diff };
 };
