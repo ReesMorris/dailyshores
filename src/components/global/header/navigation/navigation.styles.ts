@@ -2,9 +2,16 @@ import { css } from '@/styled-system/css';
 
 export const styles = {
   nav: css({
+    flexShrink: '1',
+    flexWrap: 'wrap',
     display: 'flex',
     alignItems: 'center',
-    blockSize: 'full'
+    blockSize: 'full',
+    overflow: 'hidden',
+
+    mdDown: {
+      display: 'none'
+    }
   }),
   list: css({
     display: 'flex',

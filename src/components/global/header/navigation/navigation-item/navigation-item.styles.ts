@@ -9,6 +9,7 @@ export const styles = {
     paddingInline: '4',
     color: 'gray.400',
     transition: 'colors',
+    whiteSpace: 'nowrap',
 
     _hover: {
       color: 'gray.200'

@@ -4,30 +4,21 @@ export const styles = {
   item: css({
     display: 'flex',
     alignItems: 'center',
-    paddingInline: '2',
-    paddingBlock: '1.5'
-  }),
-  wrapper: css({
-    display: 'flex',
-    alignItems: 'center',
     gap: '2',
-    cursor: 'pointer',
+    paddingInline: '4',
+    paddingBlock: '2',
+    color: 'gray.300',
+    borderRadius: 'md',
     transition: 'colors',
     fontWeight: 'medium',
-    borderRadius: 'sm',
-    color: 'gray.300',
-    fontSize: 'sm',
 
-    _highlighted: {
-      color: 'white',
-      backgroundColor: 'white/3'
+    _hover: {
+      backgroundColor: 'white/3',
+      color: 'gray.100'
     },
     _active: {
-      color: 'white',
-      backgroundColor: 'white/6'
-    },
-    _focus: {
-      outline: 'none'
+      backgroundColor: 'white/6',
+      color: 'gray.100'
     }
   }),
   icon: css({
@@ -38,9 +29,6 @@ export const styles = {
     inlineSize: '3.5',
     blockSize: '3.5',
     color: 'gray.400'
-  }),
-  text: css({
-    lineClamp: 1
   }),
   external: css({
     display: 'flex',

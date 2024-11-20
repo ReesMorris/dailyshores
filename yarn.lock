@@ -2905,7 +2905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-portal@npm:1.1.2":
+"@radix-ui/react-portal@npm:1.1.2, @radix-ui/react-portal@npm:^1.1.2":
   version: 1.1.2
   resolution: "@radix-ui/react-portal@npm:1.1.2"
   dependencies:
@@ -4269,6 +4269,7 @@ __metadata:
     "@pandacss/dev": "npm:^0.48.0"
     "@pandacss/eslint-plugin": "npm:^0.2.0"
     "@radix-ui/react-dropdown-menu": "npm:^2.1.2"
+    "@radix-ui/react-portal": "npm:^1.1.2"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"

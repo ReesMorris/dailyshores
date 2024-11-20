@@ -1,6 +1,7 @@
 import { Wrapper } from '../wrapper';
 import { styles } from './header.styles';
 import { Logo } from './logo';
+import { MobileMenu } from './mobile-menu';
 import { Navigation } from './navigation';
 
 export const Header: React.FC = () => {
@@ -9,6 +10,7 @@ export const Header: React.FC = () => {
       <Wrapper className={styles.wrapper}>
         <Logo />
         <Navigation />
+        <MobileMenu />
       </Wrapper>
     </header>
   );
